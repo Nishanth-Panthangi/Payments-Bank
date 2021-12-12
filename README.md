@@ -1,2 +1,2 @@
-# Payments-Bank - A command line Bank Simulating tool
+# Payments-Bank - A CLI tool simulation of a bank
 
