@@ -1,7 +1,8 @@
 package com.bank.main;
 
-import com.bank.model.Transanction;
-import com.bank.model.TransanctionType;
+import com.bank.model.Transaction;
+import com.bank.model.TransactionType;
+import com.bank.service.TransactionService;
 
 import java.util.Scanner;
 
@@ -13,17 +14,18 @@ public class PaymentsBankInit {
         do{
             inputCommand = scanner.nextLine();
             String[] commandARGS = inputCommand.split(" ");
-            Transanction transanction = new Transanction();
+            Transaction transaction = new Transaction();
             if(commandARGS!=null && commandARGS.length>0){
                 try {
-                    TransanctionType transanctionType = TransanctionType.valueOf(commandARGS[0]);
-                    transanction.setTransanctionType(transanctionType);
+                    TransactionType transactionType = TransactionType.valueOf(commandARGS[0]);
+                    transaction.setTransactionType(transactionType);
+
                 }catch (IllegalArgumentException e){
                     System.out.println("Invalid Command - Provide Valid Input Command - Exiting code");
                     break;
                 }
             }
-            System.out.println(transanction.getTransanctionType().name());
+            System.out.println(transaction.getTransactionType().name());
         }while(true);
     }
 }
