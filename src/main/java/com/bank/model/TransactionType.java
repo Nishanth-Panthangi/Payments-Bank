@@ -1,6 +1,6 @@
 package com.bank.model;
 
-public enum TransanctionType {
+public enum TransactionType {
     DEPOSIT,
     WITHDRAW,
     TRANSFER,
