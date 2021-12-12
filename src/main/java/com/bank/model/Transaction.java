@@ -2,17 +2,17 @@ package com.bank.model;
 
 public class Transaction {
     private String transactionCommand;
-    private Account actionAccount;
-    private Account recipientAccount;
+    private long actionAccountNumber;
+    private long recipientAccountNumber;
     private TransactionType transactionType;
     private long amount;
 
-    public Account getRecipientAccount() {
-        return recipientAccount;
+    public long getRecipientAccountNumber() {
+        return recipientAccountNumber;
     }
 
-    public void setRecipientAccount(Account recipientAccount) {
-        this.recipientAccount = recipientAccount;
+    public void setRecipientAccountNumber(long recipientAccountNumber) {
+        this.recipientAccountNumber = recipientAccountNumber;
     }
 
     public long getAmount() {
@@ -31,12 +31,12 @@ public class Transaction {
         this.transactionCommand = transactionCommand;
     }
 
-    public Account getActionAccount() {
-        return actionAccount;
+    public long getActionAccountNumber() {
+        return actionAccountNumber;
     }
 
-    public void setActionAccount(Account actionAccount) {
-        this.actionAccount = actionAccount;
+    public void setActionAccountNumber(long actionAccountNumber) {
+        this.actionAccountNumber = actionAccountNumber;
     }
 
     public TransactionType getTransactionType() {
