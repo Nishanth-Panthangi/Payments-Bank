@@ -38,7 +38,7 @@ public class SahajTransanctionValidationService implements TransanctionValidatio
      * @return
      */
     @Override
-    public boolean minMaxWithdrawlLimit() {
+    public boolean minMaxWithdrawalLimit() {
         return false;
     }
 
