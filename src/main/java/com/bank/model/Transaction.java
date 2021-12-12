@@ -1,7 +1,7 @@
 package com.bank.model;
 
 public class Transaction {
-    private String transactionId;
+    private String transactionCommand;
     private Account actionAccount;
     private Account recipientAccount;
     private TransactionType transactionType;
@@ -23,12 +23,12 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public String getTransactionId() {
-        return transactionId;
+    public String getTransactionCommand() {
+        return transactionCommand;
     }
 
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
+    public void setTransactionCommand(String transactionCommand) {
+        this.transactionCommand = transactionCommand;
     }
 
     public Account getActionAccount() {

@@ -12,14 +12,15 @@ public class PaymentsBankInit {
         Scanner scanner = new Scanner(System.in);
         String inputCommand = null;
         do{
-            inputCommand = scanner.nextLine();
+            inputCommand = scanner.next();
             String[] commandARGS = inputCommand.split(" ");
             Transaction transaction = new Transaction();
             if(commandARGS!=null && commandARGS.length>0){
                 try {
                     TransactionType transactionType = TransactionType.valueOf(commandARGS[0]);
                     transaction.setTransactionType(transactionType);
-
+                    transaction.setTransactionCommand(inputCommand);
+                    transactionType.process(transaction);
                 }catch (IllegalArgumentException e){
                     System.out.println("Invalid Command - Provide Valid Input Command - Exiting code");
                     break;

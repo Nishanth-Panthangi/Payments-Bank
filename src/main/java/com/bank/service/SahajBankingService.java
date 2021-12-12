@@ -8,15 +8,14 @@ import com.bank.model.Transaction;
 public class SahajBankingService implements BankingService {
     private static SahajBankingService sahajBankingService = null;
 
-    private SahajBankingService(){
-
-    }
+    private SahajBankingService(){}
     public static SahajBankingService getInstance(){
         if(sahajBankingService == null){
             sahajBankingService = new SahajBankingService();
         }
         return sahajBankingService;
     }
+
     @Override
     public long createAccount(Transaction transaction) {
         return 0;
