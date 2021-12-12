@@ -12,20 +12,23 @@ public class PaymentsBankInit {
         Scanner scanner = new Scanner(System.in);
         String inputCommand = null;
         do{
-            inputCommand = scanner.nextLine();
-            String[] commandARGS = inputCommand.split(" ");
-            Transaction transaction = new Transaction();
-            if(commandARGS!=null && commandARGS.length>0){
-                try {
+            try {
+                inputCommand = scanner.next();
+                if (inputCommand == null || inputCommand.isBlank()) {
+                    throw new IllegalArgumentException();
+                }
+                String[] commandARGS = inputCommand.split(" ");
+                Transaction transaction = new Transaction();
+                if (commandARGS != null && commandARGS.length > 0) {
                     TransactionType transactionType = TransactionType.valueOf(commandARGS[0]);
                     transaction.setTransactionType(transactionType);
-
-                }catch (IllegalArgumentException e){
-                    System.out.println("Invalid Command - Provide Valid Input Command - Exiting code");
-                    break;
+                    transaction.setTransactionCommand(inputCommand);
+                    transactionType.process(transaction);
                 }
+            }catch (Exception e){
+                System.out.println("Invalid Command - Provide Valid Input Command - Exiting code");
+                break;
             }
-            System.out.println(transaction.getTransactionType().name());
         }while(true);
     }
 }

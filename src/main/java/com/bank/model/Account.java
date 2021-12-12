@@ -5,6 +5,9 @@ public class Account {
     private String accountHolder;
     private long balance;
 
+    public Account(String name){
+        this.accountHolder = name;
+    }
     public long getAccountNumber() {
         return accountNumber;
     }
