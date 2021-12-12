@@ -25,16 +25,13 @@ public class SahajBankingService implements BankingService {
         if(transaction!=null){
             String[] args = commandSplit(transaction.getTransactionCommand());
             String name = args[1];
-            Account account = new Account(name);
-            transaction.setActionAccount(account);
-            return SahajBankingManager.getInstance().createAccount(transaction);
         }
         return 0;
     }
 
     @Override
     public long getBankBalance(Transaction transaction) {
-
+        // BALANCE 1001
         return 0;
     }
 
