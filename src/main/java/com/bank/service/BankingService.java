@@ -1,9 +1,11 @@
 package com.bank.service;
 
+import com.bank.model.Transaction;
+
 public interface BankingService {
-    public long createAccount(String accountHolderName);
-    public long getBankBalance(long accountNumber);
-    public long depositAmount(long accountNumber, long Amount);
-    public long withdrawAmount(long accountNumber, long Amount);
-    public boolean transferAmount(long sourceAccNumber, long targetAccountNum, long ammount);
+    public long createAccount(Transaction transaction);
+    public long getBankBalance(Transaction transaction);
+    public long depositAmount(Transaction transaction);
+    public long withdrawAmount(Transaction transaction);
+    public boolean transferAmount(Transaction transaction);
 }
